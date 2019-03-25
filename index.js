@@ -80,6 +80,8 @@ exports.run = async function(model, query) {
 
 	if (queryOptions.hasOwnProperty('paginate')) {
 		return await baseQuery.paginate(queryOptions.paginate.page, queryOptions.paginate.perPage || 20);
+	} else if (queryOptions.hasOwnProperty('aggregate')) {
+		return await baseQuery[`${queryOptions.aggregate.function}`](`${queryOptions.aggregate.field}`);
 	} else {
 		return await baseQuery.fetch();
 	}

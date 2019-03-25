@@ -136,6 +136,7 @@ The query property accepts five child properties
 * where
 * order
 * paginate
+* aggregate
 * with
 
 ### fields
@@ -205,6 +206,28 @@ Using page will return a different format of results as it includes details abou
 
 Your data is included in the `data` property, but the other properties give you useful information that allow you to easily build your pagination logic.
 
+### aggregate
+Accepts an Object
+
+```
+"aggregate": {
+  "field": <String>,
+  "function": <String>
+}
+```
+
+The function property should be any one of those supported by Lucid and documented here [https://adonisjs.com/docs/4.1/query-builder#_aggregate_helpers](https://adonisjs.com/docs/4.1/query-builder#_aggregate_helpers)
+
+Examples of aggregate functions you can use are
+
+* getCount
+* getCountDistinct
+* getMin
+* getMax
+* getSum
+* getSumDistinct
+* getAvg
+* getAvgDistinct
 
 ### with
 
