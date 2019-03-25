@@ -130,7 +130,7 @@ Although the `query` property is required, it can be left empty. For example, th
 }
 ```
 
-The query property accepts five child properties
+The query property accepts six child properties
 
 * fields
 * where
@@ -145,11 +145,11 @@ Accepts an Array of Strings
 
 This is the same as using .select(...) in a normal LUCID query. It is the fields that you want to include from your baseTable. 
 
-**important** In order for relations to work using the `with` property (see below) you must incldue the fields that form the foreign key relationship, otherwise LUCID will not be able to make the relationship.
+**important** In order for relations to work using the `with` property (see below) you must include the fields that form the foreign key relationship, otherwise LUCID will not be able to make the relationship.
 
 ### where
 
-Acceptes an Array of Objects
+Accepts an Array of Objects
 
 The where property that is a direct child of `"query"` will filter the records from your base table, the above example will restrict the base table to returning one record where PurchaseOrder == 'POC001460'
 
