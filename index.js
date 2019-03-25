@@ -29,7 +29,6 @@ const buildWhere = (object, where)=>{
   }
 }
 exports.run = async function(model, query) {
-  console.log(query)
   var baseQuery = model.query();
   var queryOptions = query
   if (queryOptions.hasOwnProperty('fields')) {
