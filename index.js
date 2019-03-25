@@ -3,7 +3,7 @@ const buildWhere = (object, where) => {
 	if (where.op === '==') {
 		return object.where(`${where.field}`, `${where.value}`);
 	}
-	if (where.op === '!=' || where.op === '<>' || where.op === '<' || where.op === '>') {
+	if (where.op === '!=' || where.op === '<>' || where.op === '<' || where.op === '>' || where.op === 'like') {
 		return object.where(`${where.field}`, `${where.op}`, `${where.value}`);
 	}
 	if (where.op === 'null') {
