@@ -130,11 +130,12 @@ Although the `query` property is required, it can be left empty. For example, th
 }
 ```
 
-The query property accepts four child properties
+The query property accepts five child properties
 
 * fields
 * where
 * order
+* paginate
 * with
 
 ### fields
@@ -180,6 +181,30 @@ If direction is omitted it defaults to `ASC`
   }
 ]
 ```
+
+### paginate
+Accepts an object
+
+```
+"paginate": {
+  "page": <integer>,
+  "perPage": <integer>
+}
+```
+Using page will return a different format of results as it includes details about the pagination. The object that is returned looks like this
+
+```
+{
+  total: '',
+  perPage: '',
+  lastPage: '',
+  page: '',
+  data: [{...}]
+}
+```
+
+Your data is included in the `data` property, but the other properties give you useful information that allow you to easily build your pagination logic.
+
 
 ### with
 
@@ -233,7 +258,7 @@ Just as with the baseQuery you can order the results of the related data. It is 
 
 Accepts an Array of Objects
 
-Each object in this array is used to filter the results from related table. It works in exactly the same way as described above for the where property for the basetable.
+Each object in this array is used to filter the results from related table. It works in exactly the same way as described above for the where property for the baseTable.
 
 
 ## where op
@@ -319,6 +344,18 @@ Would return rows where `Position` between 4 and 8
 ```
 Would return rows where `Position` is not between 4 and 8
 
+### like
+```
+"like": [
+  {
+    "field": "Company",
+    "value": "%widgets",
+    "op": "like"
+  }	
+]
+```
+Would return any rows where the Company field ends in `widgets`
+
 ### in
 
 ```
@@ -385,4 +422,6 @@ Using `notNull` the `value` property can be omitted
 ]
 ```
 Would return rows where `Position` is not null
+
+
 

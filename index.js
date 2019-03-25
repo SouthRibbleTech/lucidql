@@ -78,5 +78,9 @@ exports.run = async function(model, query) {
 		});
 	}
 
-	return await baseQuery.fetch();
+	if (queryOptions.hasOwnProperty('paginate')) {
+		return await baseQuery.paginate(queryOptions.paginate.page, queryOptions.paginate.perPage || 20);
+	} else {
+		return await baseQuery.fetch();
+	}
 };
