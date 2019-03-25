@@ -32,7 +32,7 @@ Accessing your data from the client is as easy as making a POST request and pass
 
 ### setup your Adonis application and create models and a controller
 * Setup your models and relationships as you would normally. Nothing special here
-* Create a new controller, you can call it anything you want and set it up like in the example below, but referncing your own models
+* Create a new controller, you can call it anything you want and set it up like in the example below, but referencing your own models
 
 You controller might look something like this.
 
@@ -115,7 +115,7 @@ return await PurchaseOrder.query().where('PurchaseOrder', "POC001460")
 
 ## baseTable
 
-Acceptes a String
+Accepts a String
 This should match of the models you specified in the classes object you created in your controller
 
 ## query
@@ -130,10 +130,11 @@ Although the `query` property is required, it can be left empty. For example, th
 }
 ```
 
-The query property accepts two child properties
+The query property accepts four child properties
 
 * fields
 * where
+* order
 * with
 
 ### fields
@@ -161,13 +162,32 @@ the structure of each condition is setup as follows
 ```
 You can add multiple conditions by simply adding more objects to the array.
 
+### order
+
+Accepts an Array of Objects
+
+The order property allows you to order your query. It is an array of objects, each object containing the properties
+* field
+* direction
+
+If direction is omitted it defaults to `ASC`
+
+```
+"order": [
+  {
+    "field": <string>,
+    "direction": <"ASC":"DESC"> 
+  }
+]
+```
+
 ### with
 
 Accepts an array of Objects
 
 Just as if you were using LUCID directly in your controller, `with` allows you to join relations to your baseTable
 
-The structure of with is an array of objects, with each object desribing filters and fields to include.
+The structure of with is an array of objects, with each object describing filters and fields to include.
 
 ```
 "with": [
@@ -205,6 +225,9 @@ Accepts an Array of Strings
 Works identically to the how the fields property is described above for the baseTable, but will limit the fields returned from your relationship, **Important** You must include in the list the field that forms part of the foreign key relationship
 
 If you ommit the fields property, all fields will be returned for this relationship
+
+**order**
+Just as with the baseQuery you can order the results of the related data. It is described in more detail above.
 
 **where**
 
