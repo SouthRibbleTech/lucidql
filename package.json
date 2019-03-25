@@ -1,29 +1,23 @@
 {
-  "name": "@srtech/lucidql",
-  "version": "1.1.0",
-  "description": "Query language to allow client apps to use structured JSON to get granular control over data returned from an API powered by Adonis and LUCID",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SouthRibbleTech/lucidql.git"
-  },
-  "keywords": [
-    "lucid",
-    "adonis",
-    "query",
-    "api",
-    "orm"
-  ],
-  "author": "Simon Carr",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SouthRibbleTech/lucidql/issues"
-  },
-  "homepage": "https://github.com/SouthRibbleTech/lucidql#readme",
-  "dependencies": {
-    "bluebird": "^3.5.3"
-  }
+	"name": "@srtech/lucidql",
+	"version": "1.2.0",
+	"description": "Query language to allow client apps to use structured JSON to get granular control over data returned from an API powered by Adonis and LUCID",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SouthRibbleTech/lucidql.git"
+	},
+	"keywords": [ "lucid", "adonis", "query", "api", "orm" ],
+	"author": "Simon Carr",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/SouthRibbleTech/lucidql/issues"
+	},
+	"homepage": "https://github.com/SouthRibbleTech/lucidql#readme",
+	"dependencies": {
+		"bluebird": "^3.5.3"
+	}
 }
