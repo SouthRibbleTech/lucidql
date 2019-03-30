@@ -1,6 +1,6 @@
 {
 	"name": "@srtech/lucidql",
-	"version": "1.6.1",
+	"version": "1.7.0",
 	"description": "Query language to allow client apps to use structured JSON to get granular control over data returned from an API powered by Adonis and LUCID",
 	"main": "index.js",
 	"scripts": {

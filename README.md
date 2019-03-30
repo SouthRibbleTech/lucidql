@@ -130,7 +130,7 @@ Although the `query` property is required, it can be left empty. For example, th
 }
 ```
 
-The query property accepts six child properties
+The query property accepts seven child properties
 
 * fields
 * where
@@ -138,6 +138,7 @@ The query property accepts six child properties
 * paginate
 * aggregate
 * with
+* withCount
 
 ### fields
 
@@ -446,5 +447,36 @@ Using `notNull` the `value` property can be omitted
 ```
 Would return rows where `Position` is not null
 
+### withCount
+Accepts an Array of Objects
+Lucid's own documentation for this feature can be found here https://adonisjs.com/docs/4.0/relationships#_counts
 
+```JSON
+"withCount": [
+  {
+    "table": <String>
+  }
+]
+```
+
+The data returned will include a `__meta__` property with a count of the records that are related to the baseTable
+
+
+
+```JSON
+//The following
+"withCount": [
+  {
+    "table": "tags"
+  }
+]
+
+//Would produce
+{
+  ...
+  "__meta__": {
+    "tags_count": 1
+  }
+}
+```
 

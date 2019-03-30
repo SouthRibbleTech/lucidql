@@ -78,6 +78,12 @@ exports.run = async function(model, query) {
 		});
 	}
 
+	if (queryOptions.hasOwnProperty('withCount')) {
+		for (var c of queryOptions.withCount) {
+			baseQuery.withCount(`${c.table}`);
+		}
+	}
+
 	if (queryOptions.hasOwnProperty('paginate')) {
 		return await baseQuery.paginate(queryOptions.paginate.page, queryOptions.paginate.perPage || 20);
 	} else if (queryOptions.hasOwnProperty('aggregate')) {
