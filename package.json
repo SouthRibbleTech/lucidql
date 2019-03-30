@@ -1,6 +1,6 @@
 {
 	"name": "@srtech/lucidql",
-	"version": "1.7.0",
+	"version": "1.8.0",
 	"description": "Query language to allow client apps to use structured JSON to get granular control over data returned from an API powered by Adonis and LUCID",
 	"main": "index.js",
 	"scripts": {
@@ -10,17 +10,7 @@
 		"type": "git",
 		"url": "git+https://github.com/SouthRibbleTech/lucidql.git"
 	},
-	"keywords": [
-		"lucid",
-		"adonis",
-		"query",
-		"api",
-		"orm",
-		"NodeJS",
-		"knex",
-		"MySQL",
-		"PostgreSQL"
-	],
+	"keywords": [ "lucid", "adonis", "query", "api", "orm", "NodeJS", "knex", "MySQL", "PostgreSQL" ],
 	"author": "Simon Carr",
 	"license": "ISC",
 	"bugs": {
