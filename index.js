@@ -84,6 +84,10 @@ exports.run = async function(model, query) {
 		}
 	}
 
+	if (queryOptions.hasOwnProperty('limit')) {
+		baseQuery.limit(queryOptions.limit.qty);
+	}
+
 	if (queryOptions.hasOwnProperty('paginate')) {
 		return await baseQuery.paginate(queryOptions.paginate.page, queryOptions.paginate.perPage || 20);
 	} else if (queryOptions.hasOwnProperty('aggregate')) {

@@ -10,7 +10,17 @@
 		"type": "git",
 		"url": "git+https://github.com/SouthRibbleTech/lucidql.git"
 	},
-	"keywords": [ "lucid", "adonis", "query", "api", "orm", "NodeJS", "knex", "MySQL", "PostgreSQL" ],
+	"keywords": [
+		"lucid",
+		"adonis",
+		"query",
+		"api",
+		"orm",
+		"NodeJS",
+		"knex",
+		"MySQL",
+		"PostgreSQL"
+	],
 	"author": "Simon Carr",
 	"license": "ISC",
 	"bugs": {

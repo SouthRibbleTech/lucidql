@@ -130,7 +130,7 @@ Although the `query` property is required, it can be left empty. For example, th
 }
 ```
 
-The query property accepts seven child properties
+The query property accepts these child properties
 
 * fields
 * where
@@ -139,6 +139,7 @@ The query property accepts seven child properties
 * aggregate
 * with
 * withCount
+* limit
 
 ### fields
 
@@ -479,4 +480,17 @@ The data returned will include a `__meta__` property with a count of the records
   }
 }
 ```
+### limit
+Accepts an Object
+
+limit will `limit` the number of records that Lucid returns to you.
+
+The object should contain only a single property `qty` with a numeric value
+
+The code below would tell Lucid to limit the number of records returned from baseTable to 3.
+
+```JSON
+limit: { qty: 3}
+```
+
 
